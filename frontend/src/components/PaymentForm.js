@@ -31,7 +31,7 @@ class PaymentForm extends Component {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/loans/${formData.loan_id}/payments`,
+        `${process.env.REACT_APP_API_BASE}/api/v1/loans/${formData.loan_id}/payments`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

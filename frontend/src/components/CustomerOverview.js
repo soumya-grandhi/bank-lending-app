@@ -25,7 +25,7 @@ class CustomerOverview extends Component{
     this.setState({ loading: true, data: null, error: '' });
 
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/customers/${customer_id}/overview`);
+      const response = await fetch(`${process.env.REACT_APP_API_BASE}/api/v1/customers/${customer_id}/overview`);
 
       if (!response.ok) {
         let errorMessage = 'Something went wrong';
